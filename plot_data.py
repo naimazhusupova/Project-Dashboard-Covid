@@ -16,4 +16,4 @@ st.header('Covid-19 new cases')
 st.write('This is a graph of new Covid-19 cases')
 df1 = df["new_cases"]
 
-st.bar_chart(df1)
+st.line_chart(df1)
