@@ -22,5 +22,5 @@ st.line_chart(df1)
 st.header('Total Covid-19 cases per continent')
 st.write('This Graph shows Covid-19 total cases dynamics per continent')
 df2 = df['continent'].value_counts().head(10).sort_values(ascending=False)
-st.area_chart(df2)
+st.bar_chart(df2)
 
