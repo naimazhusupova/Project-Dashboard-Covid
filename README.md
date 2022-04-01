@@ -17,11 +17,11 @@ How to install all required dependencies?
 
 1. Open Anaconda Navigator
 2. Create new environment based on the settings:
-- Click on Environments
-- Click on 'Create'
-- Name an environment
-- Choose Python version 3.8.12
-- Click 'Create'
+  - Click on Environments
+  - Click on 'Create'
+  - Name an environment
+  - Choose Python version 3.8.12
+  - Click 'Create'
 3. Click on the created environment
 4. Choose 'Open Terminal'
 5. Go to the Terminal
