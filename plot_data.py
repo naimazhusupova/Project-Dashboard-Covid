@@ -11,3 +11,9 @@ df = pd.read_csv("https://covid.ourworldindata.org/data/owid-covid-data.csv")
 dataframe = df["total_cases"]
 
 st.line_chart(dataframe)
+
+st.header('Covid-19 new cases')
+st.write('This is a graph of new Covid-19 cases')
+df1 = df["new_cases"]
+
+st.area_chart(df1)
