@@ -2,7 +2,7 @@
 
 This project repo contains the description, tools and instructions to replicate our dashboard with information about Covid-19. 
 
-For this dashboard we use Streamlit for the vizualization based on a dataset [COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University](https://github.com/CSSEGISandData/COVID-19) of Johns Hopkins University. 
+For this dashboard we use Streamlit for the vizualization based on a dataset [COVID-19 Dataset by Our World in Data](https://github.com/owid/covid-19-data/blob/master/public/data/README.md) 
 
 Our dashboard is interactive and allows the user to:
 1. Select which countries to display (among a pre-defined list).
