@@ -20,5 +20,5 @@ df1 = df["new_cases"]
 st.line_chart(df1)
 
 st.write('This graph shows total cases per continent')
-df2 = df['continent'].value_counts().head(10).sort_values(ascending=False).plot(kind='bar', figsize=(7,4))
+df2 = df['continent'].value_counts().head(10).sort_values(ascending=False)
 st.area_chart(df2)
