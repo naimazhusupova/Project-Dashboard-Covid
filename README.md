@@ -24,7 +24,7 @@ Part 2
 2. Create new environment based on the settings:
     - Click on Environments
     - Click on 'Create'
-    - Name an environment
+    - Name an environment (for example: My_Environment)
     - Choose Python version 3.8.12
     - Click 'Create'
 3. Click on the created environment
