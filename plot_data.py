@@ -17,12 +17,8 @@ st.header('Covid-19 new cases')
 st.write('This is a graph of new Covid-19 cases')
 df1 = df["new_cases"]
 
-st.area_chart(df1)
+st.line_chart(df1)
 
 st.write('This graph shows total cases per continent')
 df2 = df['continent'].value_counts().head(10).sort_values(ascending=False).plot(kind='bar', figsize=(7,4))
-plt.xlabel('continents')
-plt.ylabel('cases')
-plt.title('Total cases per continent')
-
-plt.show()
+st.area_chart(df2)
