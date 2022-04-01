@@ -10,16 +10,5 @@ Our dashboard is interactive and allows the user to:
 
 # Installing Dependencies
 
-## Streamlit
-1. Go to Anaconda.Navigator
-2. Go to Environments
-3. Click on 'Create'
-4. Name a new environment
-5. Choose a Python version
-6. Click on 'Create'
-7. Click on the created environment 
-8. Click on 'Open Terminal'
-9. Write 'pip install streamlit' and wait a bit
-10. Write 'streamlit hello'
-
-Check this [Streamlit tutorial](https://docs.streamlit.io/library/get-started/installation)
+Instead of installing every package mannualy we created a requirements.txt file and by running once all the necessary packages will be installed at once.
+Check this [tutorial](https://docs.streamlit.io/streamlit-cloud/get-started/deploy-an-app/app-dependencies)
