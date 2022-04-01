@@ -1,6 +1,8 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
 
 st.title('COVID Dashboard')
 st.header('Global Covid-19 cases')
@@ -17,3 +19,11 @@ st.write('This is a graph of new Covid-19 cases')
 df1 = df["new_cases"]
 
 st.line_chart(df1)
+
+st.write('This graph shows total cases per continent')
+df['continent'].value_counts().head(10).sort_values(ascending=False).plot(kind='bar', figsize=(7,4))
+plt.xlabel('continents')
+plt.ylabel('cases')
+plt.title('Total cases per continent')
+
+plt.show()
