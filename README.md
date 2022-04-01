@@ -12,3 +12,17 @@ Our dashboard is interactive and allows the user to:
 
 Instead of installing every package mannualy we created a requirements.txt file and by running once all the necessary packages will be installed at once.
 Check this [tutorial](https://docs.streamlit.io/streamlit-cloud/get-started/deploy-an-app/app-dependencies)
+
+How to install all required dependencies?
+
+1. Open Anaconda Navigator
+2. Create new environment based on the settings:
+- Click on Environments
+- Click on 'Create'
+- Name an environment
+- Choose Python version 3.8.12
+- Click 'Create'
+3. Click on the created environment
+4. Choose 'Open Terminal'
+5. Go to the Terminal
+6. Write `pip install -r requirements.txt` (this .txt file is provided in this repo)
