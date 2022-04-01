@@ -21,4 +21,5 @@ Our dashboard is interactive and allows the user to:
 8. Click on 'Open Terminal'
 9. Write 'pip install streamlit' and wait a bit
 10. Write 'streamlit hello'
+
 Check this [Streamlit tutorial](https://docs.streamlit.io/library/get-started/installation)
