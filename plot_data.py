@@ -77,7 +77,6 @@ daily_cases = data.groupby(pd.Grouper(key="date", freq="1D")).aggregate(new_case
 fig = daily_cases.iplot(kind="line", asFigure=True, 
                         x="date", y="new_cases")
 st.plotly_chart(fig)
-<<<<<<< HEAD
 
 
 
@@ -86,6 +85,3 @@ if len(trends)>0:
     fig=trend_data.iplot(kind="line", asFigure=True, xTitle="Date", yTitle="Values",
                          x="date", y=trends, title=f"{trend_level} Trend of {', '.join(trends)}.", subplots=subplots)
     st.plotly_chart(fig, use_container_width=False)
-=======
-st.ыmarkdown("This graph shows Covid-19 new cases over time per country")
->>>>>>> 4ff5314a92cd2f69817a8926ee505e6b04814395
