@@ -104,7 +104,14 @@ if analysis_type=="Multiple":
 
 
 
-#
-#
-#
-#
+import datetime
+
+today = datetime.date.today()
+tomorrow = today + datetime.timedelta(days=1)
+start_date = st.sidebar.date_input('Start date', today)
+end_date = st.sidebar.date_input('End date', tomorrow)
+if start_date < end_date:
+    st.sidebar.success('Start date: `%s`\n\nEnd date:`%s`' % (start_date, end_date))
+else:
+    st.sidebar.error('Error: End date must fall after start date.')
+
