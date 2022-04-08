@@ -45,6 +45,12 @@ location_selector = sidebar.selectbox(
 )
 st.markdown(f"# Currently Selected {location_selector}")
 
+#data_type = ['New cases', 'New deaths', 'New vaccinations', 'New tests']
+#sidebar1 = st.sidebar
+#location_selector = sidebar1.selectbox(
+#    "Select a Data",
+#    data_type
+#)
 #trend_level = sidebar.selectbox("Trend Level", ["Daily"])
 #st.markdown(f"### Currently Selected {trend_level}")
 
@@ -75,13 +81,12 @@ if show_data:
 
 daily_cases = data.groupby(pd.Grouper(key="date", freq="1D")).aggregate(new_cases=("new_cases", "sum")).reset_index()
 fig = daily_cases.iplot(kind="line", asFigure=True, 
-                        x="date", y="new_cases")
+                        x="date", y="new_cases", xTitle="Date", yTitle="Number of new cases", title = "Covid-19 new cases per country over time")
 st.plotly_chart(fig)
-st.markdown("This graph shows Covid-19 new cases per country over time")
 
 
-subplots=sidebar.checkbox("Show Subplots", True)
-if len(trends)>0:
-    fig=trend_data.iplot(kind="line", asFigure=True, xTitle="Date", yTitle="Number of new cases",
-                         x="date", y=trends, title=f"{trend_level} Trend of {', '.join(trends)}.", subplots=subplots)
-    st.plotly_chart(fig, use_container_width=False)
+#subplots=sidebar.checkbox("Show Subplots", True)
+#if len(trends)>0:
+#    fig=trend_data.iplot(kind="line", asFigure=True, xTitle="Date", yTitle="Number of new cases",
+#                         x="date", y=trends, title=f"Trend of {', '.join(trends)}.", subplots=subplots)
+#    st.plotly_chart(fig, use_container_width=False)
