@@ -26,57 +26,111 @@ data = get_data(url)
 locations = data.location.unique().tolist()
 
 sidebar = st.sidebar
-location_selector = sidebar.selectbox(
-    "Select a Location",
-    locations
-)
-st.markdown(f"# Currently Selected {location_selector}")
 
-#data_type = ['New cases', 'New deaths', 'New vaccinations', 'New tests']
-#sidebar1 = st.sidebar
-#location_selector = sidebar1.selectbox(
-#    "Select a Data",
-#    data_type
-#)
-#trend_level = sidebar.selectbox("Trend Level", ["Daily"])
-#st.markdown(f"### Currently Selected {trend_level}")
+analysis_type = sidebar.radio("Analysis Type", ["Single", "Multiple"])
+st.markdown(f"Analysis Mode: {analysis_type}")
 
-show_data = sidebar.checkbox("Show Data")
+if analysis_type=="Single":
+    location_selector = sidebar.selectbox(
+        "Select a Location",
+        locations
+    )
+    st.markdown(f"### Currently Selected {location_selector}")
+    #trend_level = sidebar.selectbox("Trend Level", ["Daily", "Weekly", "Monthly", "Quarterly", "Yearly"])
+    #st.markdown(f"### Currently Selected {trend_level}")
 
-trend_kwds = {"Daily": "1D", "Weekly": "1W", "Monthly": "1M", "Quarterly": "1Q", "Yearly": "1Y"}
-trend_data = data.query(f"location=='{location_selector}'").\
-    groupby(pd.Grouper(key="date", 
-    freq="1D")).aggregate(new_cases=("new_cases", "sum"),
-    new_deaths = ("new_deaths", "sum"),
-    new_vaccinations = ("new_vaccinations", "sum"),
-    new_tests = ("new_tests", "sum")).reset_index()
+    #show_data = sidebar.checkbox("Show Data")
 
-trend_data["date"] = trend_data.date.dt.date
+    trend_kwds = {"Daily": "1D", "Weekly": "1W", "Monthly": "1M", "Quarterly": "1Q", "Yearly": "1Y"}
+    trend_data = data.query(f"location=='{location_selector}'").\
+        groupby(pd.Grouper(key="date", 
+        freq="1D")).aggregate(new_cases=("new_cases", "sum"),
+        new_deaths = ("new_deaths", "sum"),
+        new_vaccinations = ("new_vaccinations", "sum"),
+        new_tests = ("new_tests", "sum")).reset_index()
 
-new_cases = sidebar.checkbox("New Cases")
-new_deaths = sidebar.checkbox("New Deaths")
-new_vaccinations = sidebar.checkbox("New Vaccinations")
-new_tests = sidebar.checkbox("New Tests")
+    trend_data["date"] = trend_data.date.dt.date
 
-lines = [new_cases, new_deaths, new_vaccinations, new_tests]
-line_cols = ["new_cases", "new_deaths", "new_vaccinations", "new_tests"]
-trends = [c[1] for c in zip(lines,line_cols) if c[0]==True]
+    new_cases = sidebar.checkbox("New Cases")
+    new_deaths = sidebar.checkbox("New Deaths")
+    new_vaccinations = sidebar.checkbox("New Vaccinations")
+    new_tests = sidebar.checkbox("New Tests")
 
-if show_data:
-    tcols = ["date"] + trends
-    st.dataframe(trend_data[tcols])
+    lines = [new_cases, new_deaths, new_vaccinations, new_tests]
+    line_cols = ["new_cases", "new_deaths", "new_vaccinations", "new_tests"]
+    trends = [c[1] for c in zip(lines,line_cols) if c[0]==True]
 
-daily_cases = data.groupby(pd.Grouper(key="date", freq="1D")).aggregate(new_cases=("new_cases", "sum")).reset_index()
-fig = daily_cases.iplot(kind="line", asFigure=True, 
-                        x="date", y="new_cases", xTitle="Date", yTitle="Number of new cases", title = "Covid-19 new cases per country over time")
-st.plotly_chart(fig)
+    #if show_data:
+    #    tcols = ["date"] + trends
+    #    st.dataframe(trend_data[tcols])
+
+    #subplots=sidebar.checkbox("Show Subplots", True)
+    if len(trends)>0:
+        fig=trend_data.iplot(kind="line", asFigure=True, xTitle="Date", yTitle="Values",
+                            x="date", y=trends, title=f"Trend of {', '.join(trends)}.", subplots=False)
+        st.plotly_chart(fig, use_container_width=False)
+
+if analysis_type=="Multiple":
+    selected = sidebar.multiselect("Select Locations ", locations)
+    st.markdown(f"### Selected Locations: {', '.join(selected)}")
+    #show_data = sidebar.checkbox("Show Data")
+    #trend_level = sidebar.selectbox("Trend Level", ["Daily", "Weekly", "Monthly", "Quarterly", "Yearly"])
+    #st.markdown(f"### Currently Selected {trend_level}")
+
+    trend_kwds = {"Daily": "1D", "Weekly": "1W", "Monthly": "1M", "Quarterly": "1Q", "Yearly": "1Y"}
+
+    trend_data = data.query(f"location in {selected}").\
+        groupby(["location", pd.Grouper(key="date", 
+        freq="1D")]).aggregate(new_cases=("new_cases", "sum"),
+        new_deaths = ("new_deaths", "sum"),
+        new_vaccinations = ("new_vaccinations", "sum"),
+        new_tests = ("new_tests", "sum")).reset_index()
+
+    trend_data["date"] = trend_data.date.dt.date
+
+    new_cases = sidebar.checkbox("New Cases")
+    new_deaths = sidebar.checkbox("New Deaths")
+    new_vaccinations = sidebar.checkbox("New Vaccinations")
+    new_tests = sidebar.checkbox("New Tests")
+
+    lines = [new_cases, new_deaths, new_vaccinations, new_tests]
+    line_cols = ["new_cases", "new_deaths", "new_vaccinations", "new_tests"]
+    trends = [c[1] for c in zip(lines,line_cols) if c[0]==True]
+
+    ndf = pd.DataFrame(data=trend_data.date.unique(),columns=["date"])
+
+    for s in selected:
+        new_cols = ["date"]+[f"{s}_{c}" for c in line_cols]
+        tdf = trend_data.query(f"location=='{s}'")
+        tdf.drop("location", axis=1, inplace=True)
+        tdf.columns=new_cols
+        ndf=ndf.merge(tdf,on="date",how="inner")
+
+    #if show_data:
+    #    if len(ndf)>0:
+    #        st.dataframe(ndf)
+    #    else:
+    #        st.markdown("Empty Dataframe")
+
+    new_trends = []
+    for c in trends:
+        new_trends.extend([f"{s}_{c}" for s in selected])
+
+    #subplots=sidebar.checkbox("Show Subplots", True)
+    if len(trends)>0:
+        st.markdown("### Trend of Selected Locations")
+
+        fig=ndf.iplot(kind="line", asFigure=True, xTitle="Date", yTitle="Values",
+                            x="date", y=new_trends, title=f"Trend of {', '.join(trends)}.", subplots=False)
+        st.plotly_chart(fig, use_container_width=False)
 
 
-#subplots=sidebar.checkbox("Show Subplots", True)
-#if len(trends)>0:
-#    fig=trend_data.iplot(kind="line", asFigure=True, xTitle="Date", yTitle="Number of new cases",
-#                         x="date", y=trends, title=f"Trend of {', '.join(trends)}.", subplots=subplots)
-#    st.plotly_chart(fig, use_container_width=False)
+
+#
+#
+#
+#
+
 
 def df_filter(message,df):
 
