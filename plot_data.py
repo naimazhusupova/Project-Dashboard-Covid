@@ -41,7 +41,7 @@ if analysis_type=="Single":
 
     #show_data = sidebar.checkbox("Show Data")
 
-    trend_kwds = {"Daily": "1D", "Weekly": "1W", "Monthly": "1M", "Quarterly": "1Q", "Yearly": "1Y"}
+    #trend_kwds = {"Daily": "1D", "Weekly": "1W", "Monthly": "1M", "Quarterly": "1Q", "Yearly": "1Y"}
     trend_data = data.query(f"location=='{location_selector}'").\
         groupby(pd.Grouper(key="date", 
         freq="1D")).aggregate(new_cases=("new_cases", "sum"),
@@ -77,7 +77,7 @@ if analysis_type=="Multiple":
     #trend_level = sidebar.selectbox("Trend Level", ["Daily", "Weekly", "Monthly", "Quarterly", "Yearly"])
     #st.markdown(f"### Currently Selected {trend_level}")
 
-    trend_kwds = {"Daily": "1D", "Weekly": "1W", "Monthly": "1M", "Quarterly": "1Q", "Yearly": "1Y"}
+    #trend_kwds = {"Daily": "1D", "Weekly": "1W", "Monthly": "1M", "Quarterly": "1Q", "Yearly": "1Y"}
 
     trend_data = data.query(f"location in {selected}").\
         groupby(["location", pd.Grouper(key="date", 
