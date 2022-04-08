@@ -4,8 +4,6 @@ import numpy as np
 import pandas as pd
 import cufflinks
 import datetime
-import re
-import base64
 
 st.title('COVID Dashboard')
 st.markdown('This Dashboard displays the worldwide cases of Covid-19 over time. It is based on the data by Our World in Data. We also have a tutorial on how to build this Dashboard by yourself.')
