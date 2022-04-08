@@ -85,3 +85,14 @@ if len(trends)>0:
     fig=trend_data.iplot(kind="line", asFigure=True, xTitle="Date", yTitle="Number of new cases",
                          x="date", y=trends, title=f"{trend_level} Trend of {', '.join(trends)}.", subplots=subplots)
     st.plotly_chart(fig, use_container_width=False)
+
+import datetime
+
+today = datetime.date.today()
+tomorrow = today + datetime.timedelta(days=1)
+start_date = st.sidebar.date_input('Start date', today)
+end_date = st.sidebar.date_input('End date', tomorrow)
+if start_date < end_date:
+    st.sidebar.success('Start date: `%s`\n\nEnd date:`%s`' % (start_date, end_date))
+else:
+    st.sidebar.error('Error: End date must fall after start date.')
