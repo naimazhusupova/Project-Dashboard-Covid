@@ -49,4 +49,4 @@ daily_cases = data.groupby(pd.Grouper(key="date", freq="1D")).aggregate(new_case
 fig = daily_cases.iplot(kind="line", asFigure=True, 
                         x="date", y="new_cases", xTitle="Date", yTitle="Number of New Cases")
 st.plotly_chart(fig)
-st.sidebar.markdown("This graph shows Covid-19 new cases over time per country")
+st.ыmarkdown("This graph shows Covid-19 new cases over time per country")
