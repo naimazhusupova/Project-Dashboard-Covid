@@ -5,8 +5,8 @@ import matplotlib.pyplot as plt
 
 st.title('COVID Dashboard')
 st.markdown('This Dashboard displays the worldwide cases of Covid-19 over time. It is based on the data by Our World in Data. We also have a tutorial on how to build this Dashboard by yourself.')
-st.sidebar.title("About this dashboard Project")
-st.sidebar.markdown("Here we will give further information about our project or implement some cool widgets!")
+st.sidebar.title("Category Filter")
+#st.sidebar.markdown("Here we will give further information about our project or implement some cool widgets!")
 
 df = pd.read_csv("https://covid.ourworldindata.org/data/owid-covid-data.csv")
 
