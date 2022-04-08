@@ -5,7 +5,9 @@ import matplotlib.pyplot as plt
 
 st.title('COVID Dashboard')
 st.header('Global Covid-19 cases')
+st.sidebar.title("About this dashboard Project")
 st.markdown('This Graph displays the worldwide cases of Covid-19 over time')
+st.sidebar.markdown("Here we will give further information about our project or implement some cool widgets!")
 
 df = pd.read_csv("https://covid.ourworldindata.org/data/owid-covid-data.csv")
 
