@@ -13,27 +13,6 @@ df = pd.read_csv("https://covid.ourworldindata.org/data/owid-covid-data.csv")
 
 dataframe = df["total_cases"]
 
-st.line_chart(dataframe)
-
-st.header('Covid-19 new cases')
-st.write('This is a graph of new Covid-19 cases')
-df1 = df["new_cases"]
-
-st.line_chart(df1)
-
-st.header('Total Covid-19 cases per continent')
-st.write('This Graph shows Covid-19 total cases dynamics per continent')
-df2 = df['continent'].value_counts().head(10).sort_values(ascending=False)
-st.bar_chart(df2)
-
-
-
-
-
-
-
-
-
 
 
 import streamlit as st
@@ -55,7 +34,7 @@ data = get_data(url)
 daily_cases = data.groupby(pd.Grouper(key="date", freq="1D")).aggregate(new_cases=("new_cases", "sum")).reset_index()
 fig = daily_cases.iplot(kind="line", asFigure=True, 
                         x="date", y="new_cases")
-st.plotly_chart(fig)
+#st.plotly_chart(fig)
 
 
 
