@@ -25,6 +25,13 @@ locations = data.location.unique().tolist()
 
 sidebar = st.sidebar
 
+start_date = st.sidebar.date_input('Start date')
+end_date = st.sidebar.date_input('End date')
+if start_date < end_date:
+    st.sidebar.success('Start date: `%s`\n\nEnd date:`%s`' % (start_date, end_date))
+else:
+    st.sidebar.error('Error: End date must fall after start date.')
+
 
 selected = sidebar.multiselect("Select Locations ", locations)
 st.markdown(f"### Selected Locations: {', '.join(selected)}")
@@ -33,18 +40,17 @@ trend_data = data.query(f"location in {selected}").\
     groupby(["location", pd.Grouper(key="date", 
     freq="1D")]).aggregate(new_cases=("new_cases", "sum"),
     new_deaths = ("new_deaths", "sum"),
-    new_vaccinations = ("new_vaccinations", "sum"),
-    new_tests = ("new_tests", "sum")).reset_index()
+    new_vaccinations = ("new_vaccinations", "sum")).reset_index()
 
 trend_data["date"] = trend_data.date.dt.date
 
 new_cases = sidebar.checkbox("New Cases")
 new_deaths = sidebar.checkbox("New Deaths")
 new_vaccinations = sidebar.checkbox("New Vaccinations")
-new_tests = sidebar.checkbox("New Tests")
 
-lines = [new_cases, new_deaths, new_vaccinations, new_tests]
-line_cols = ["new_cases", "new_deaths", "new_vaccinations", "new_tests"]
+
+lines = [new_cases, new_deaths, new_vaccinations]
+line_cols = ["new_cases", "new_deaths", "new_vaccinations"]
 trends = [c[1] for c in zip(lines,line_cols) if c[0]==True]
 
 ndf = pd.DataFrame(data=trend_data.date.unique(),columns=["date"])
@@ -69,14 +75,4 @@ if len(trends)>0:
 
 
 
-import datetime
-
-today = datetime.date.today()
-tomorrow = today + datetime.timedelta(days=1)
-start_date = st.sidebar.date_input('Start date', today)
-end_date = st.sidebar.date_input('End date', tomorrow)
-if start_date < end_date:
-    st.sidebar.success('Start date: `%s`\n\nEnd date:`%s`' % (start_date, end_date))
-else:
-    st.sidebar.error('Error: End date must fall after start date.')
 
