@@ -47,18 +47,18 @@ fig = daily_cases.iplot(kind="line", asFigure=True,
 
 
 
-import cufflinks as cf
-cf.go_offline()
-cf.set_config_file(offline=False, world_readable=True)
+import streamlit as st
+import numpy as np
+import pandas as pd
+import cufflinks
 
-
+@st.cache
 def get_data(url):
     df = pd.read_csv(url)
     df["date"] = pd.to_datetime(df.date).dt.date
     df['date'] = pd.DatetimeIndex(df.date)
 
     return df
-
 
 url = "https://covid.ourworldindata.org/data/owid-covid-data.csv"
 data = get_data(url)
