@@ -72,9 +72,11 @@ if show_data:
     st.dataframe(trend_data[tcols])
 
 daily_cases = data.groupby(pd.Grouper(key="date", freq="1D")).aggregate(new_cases=("new_cases", "sum")).reset_index()
-fig = daily_cases.iplot(kind="line", asFigure=True, 
-                        x="date", y="new_cases")
+fig = daily_cases.iplot(kind="line", asFigure=True, x="date", y="new_cases")
+
 st.plotly_chart(fig)
+st.markdown("This graph shows Covid-19 new cases per country over time")
+
 
 
 
