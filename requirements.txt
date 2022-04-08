@@ -2,3 +2,4 @@ streamlit
 matplotlib
 jupyterlab
 plotly
+cufflinks
