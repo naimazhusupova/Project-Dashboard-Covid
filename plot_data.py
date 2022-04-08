@@ -74,7 +74,7 @@ if show_data:
 daily_cases = data.groupby(pd.Grouper(key="date", freq="1D")).aggregate(new_cases=("new_cases", "sum")).reset_index()
 fig = daily_cases.iplot(kind="line", asFigure=True, 
                         x="date", y="new_cases")
-#st.plotly_chart(fig)
+st.plotly_chart(fig)
 
 
 
