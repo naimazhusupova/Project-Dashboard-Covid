@@ -42,6 +42,7 @@ data.loc[mask]
 data = data.loc[mask]
 
 
+
 selected = sidebar.multiselect("Select Locations ", locations)
 st.markdown(f"### Selected Locations: {', '.join(selected)}")
 
