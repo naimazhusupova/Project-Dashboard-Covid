@@ -34,11 +34,10 @@ else:
     st.sidebar.error('Error: End date must fall after start date.')
 
 
-start_date = datetime.datetime(start_date)
-end_date= datetime.datetime(end_date)
+start_date = np.datetime64(start_date)
+end_date = np.datetime64(end_date)
 data['date'] = pd.to_datetime(data['date'])
 mask = (data['date'] > start_date) & (data['date'] <= end_date)
-data.loc[mask]
 data = data.loc[mask]
 
 
