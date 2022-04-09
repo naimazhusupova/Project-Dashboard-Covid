@@ -15,15 +15,15 @@ def get_data(url):
     df = pd.read_csv(url)
     df["date"] = pd.to_datetime(df.date).dt.date
     df['date'] = pd.DatetimeIndex(df.date)
-
     return df
 
 url = "https://covid.ourworldindata.org/data/owid-covid-data.csv"
-data = get_data(url)
+df = get_data(url)
 
-locations = data.location.unique().tolist()
+locations = df.location.unique().tolist()
 
 sidebar = st.sidebar
+
 
 
 start_date = st.sidebar.date_input('Start date')
@@ -36,16 +36,17 @@ else:
 
 start_date = np.datetime64(start_date)
 end_date = np.datetime64(end_date)
-data['date'] = pd.to_datetime(data['date'])
-mask = (data['date'] > start_date) & (data['date'] <= end_date)
-data = data.loc[mask]
+df['date'] = pd.to_datetime(df['date'])
+mask = (df['date'] > start_date) & (df['date'] <= end_date)
+df = df.loc[mask]
+
 
 
 
 selected = sidebar.multiselect("Select Locations ", locations)
 st.markdown(f"### Selected Locations: {', '.join(selected)}")
 
-trend_data = data.query(f"location in {selected}").\
+trend_data = df.query(f"location in {selected}").\
     groupby(["location", pd.Grouper(key="date", 
     freq="1D")]).aggregate(new_cases=("new_cases", "sum"),
     new_deaths = ("new_deaths", "sum"),
