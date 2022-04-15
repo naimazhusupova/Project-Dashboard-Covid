@@ -4,8 +4,6 @@ import numpy as np
 import pandas as pd
 import cufflinks
 import datetime
-import seaborn as sns
-
 
 st.title('COVID-19 Dashboard')
 st.markdown('This Dashboard displays the worldwide cases and deaths of Covid-19 over time. It is based on the data by Our World in Data. This includes the information about positive cases, deaths and vaccinations per country.')
