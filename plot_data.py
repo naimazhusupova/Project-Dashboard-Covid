@@ -24,6 +24,14 @@ df = get_data(url)
 
 locations = df.location.unique().tolist()
 
+#removing Continents and other unwanted categories from the country selection list
+locations_to_remove = ['Africa', 'Asia', 'Australia', 'Europe', 'European Union', 'High income', 'International', 'Low income',
+ 'Lower middle income', 'Oceania', 'South America', 'Upper middle income', 'World']
+
+for loc in locations_to_remove:
+    print(loc)
+    locations.remove(loc)
+
 sidebar = st.sidebar
 
 
