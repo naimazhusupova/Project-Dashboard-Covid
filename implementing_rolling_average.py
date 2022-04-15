@@ -4,7 +4,6 @@ import numpy as np
 import pandas as pd
 import cufflinks
 import datetime
-import seaborn as sns
 
 
 st.title('COVID-19 Dashboard')
