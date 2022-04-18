@@ -29,7 +29,6 @@ locations_to_remove = ['Africa', 'Asia', 'Australia', 'Europe', 'European Union'
  'Lower middle income', 'Oceania', 'South America', 'Upper middle income', 'World']
 
 for loc in locations_to_remove:
-    print(loc)
     locations.remove(loc)
 
 sidebar = st.sidebar
@@ -104,10 +103,36 @@ new_trends = []
 for c in trends:
     new_trends.extend([f"{s}_{c}" for s in selected])
 
+
 if len(trends)>0:
     #st.markdown("### Trend of Selected Locations")
 
-    fig=ndf.iplot(kind="line", asFigure=True, xTitle="Date", yTitle="Values",
+    # Plot using Cufflinks
+    fig = ndf.iplot(kind="line", asFigure=True, xTitle="Date", yTitle="Values",
                         x="date", y=new_trends, title=f"Data for {', '.join(trends)}.", subplots=False)
     st.plotly_chart(fig, use_container_width=False)
+
+    # Plot using Matplotlib
+    fig = plt.figure(figsize=(7,5))
+    ax = fig.add_subplot(1,1,1)
+    for _ in range(0,len(new_trends)):
+        ax.plot(ndf["date"],ndf[new_trends[_]], label=new_trends[_])
+    #ax.plot(ndf["date"],ndf[new_trends[0]])
+    #ax = ndf.plot(x="date", y=new_trends[0])
+    ax.set_xlabel("Date")
+    ax.set_ylabel("Values")
+    ax.xaxis.grid(True, linestyle='--')
+    ax.yaxis.grid(True, linestyle='--')
+    ax.legend(loc="upper left")
+    fig.subplots_adjust(left=0, bottom=0, right=1, top=1, wspace=0, hspace=0)
+    st.plotly_chart(fig, use_container_width=False)
+
+    st.markdown(f"### Peak values:")
+    for _ in range(0,len(new_trends)):
+        st.markdown("Peak value for "+new_trends[_]+": "+str(int(ndf[new_trends[_]].max()))+" ,  date: "+str(ndf["date"][ndf[new_trends[_]].idxmax()]))
+
+
+    print(list(new_trends))
+
+
     
