@@ -2,7 +2,7 @@ import streamlit as st
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import cufflinks
+#import cufflinks
 import datetime
 
 st.title('COVID-19 Dashboard')
@@ -108,12 +108,12 @@ if len(trends)>0:
     #st.markdown("### Trend of Selected Locations")
 
     # Plot using Cufflinks
-    fig = ndf.iplot(kind="line", asFigure=True, xTitle="Date", yTitle="Values",
-                        x="date", y=new_trends, title=f"Data for {', '.join(trends)}.", subplots=False)
-    st.plotly_chart(fig, use_container_width=False)
+    #fig = ndf.iplot(kind="line", asFigure=True, xTitle="Date", yTitle="Values",
+    #                    x="date", y=new_trends, title=f"Data for {', '.join(trends)}.", subplots=False)
+    #st.plotly_chart(fig, use_container_width=False)
 
     # Plot using Matplotlib
-    fig = plt.figure(figsize=(7,5))
+    fig = plt.figure(figsize=(7,4))
     ax = fig.add_subplot(1,1,1)
     for _ in range(0,len(new_trends)):
         ax.plot(ndf["date"],ndf[new_trends[_]], label=new_trends[_])
