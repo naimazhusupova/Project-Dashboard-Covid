@@ -81,22 +81,14 @@ trend_data["date"] = trend_data.date.dt.date
 
 selected_type1 = sidebar.radio("Choose a data type", ["New Cases", "New Deaths", "New Vaccinations"])
 
+m = 0
 print(selected_type1)
 if selected_type1 == "New Cases":
-    selected_type_col1 = "new_cases"
-    new_cases1 = True
-    new_deaths1 = False
-    new_vaccinations1 = False
+    m = 0
 if selected_type1 == "New Deaths":
-    selected_type_col1 = "new_deaths"
-    new_cases1 = False
-    new_deaths1 = True
-    new_vaccinations1 = False
+    m = 1
 if selected_type1 == "New Vaccinations":
-    selected_type_col1 = "new_vaccinations"
-    new_cases1 = False
-    new_deaths1 = False
-    new_vaccinations1 = True
+    m = 2
 
 
 #st.sidebar.markdown("Choose a data")
@@ -104,19 +96,49 @@ if selected_type1 == "New Vaccinations":
 #new_deaths = sidebar.checkbox("New Deaths")
 #new_vaccinations = sidebar.checkbox("New Vaccinations")
 
-st.sidebar.markdown("Choose a format")
-rolling_average_cases = sidebar.checkbox("7-Day Rolling Average of Cases")
-rolling_average_deaths = sidebar.checkbox("7-Day Rolling Average of Deaths")
-rolling_average_vaccinations = sidebar.checkbox("7-Day Rolling Average of Vaccinations")
-cumulative_number_cases = sidebar.checkbox("Cumulative Number of Cases")
-cumulative_number_deaths = sidebar.checkbox("Cumulative Number of Deaths")
-cumulative_number_vaccinations = sidebar.checkbox("Cumulative Number of Vaccinations")
+
+selected_type2 = sidebar.radio("Choose a data format", ["Daily Number", "7-Day Rolling Average", "Cumulative Number"])
+
+n = 0
+print(selected_type2)
+if selected_type2 == "Daily Number":
+    n = 0
+if selected_type2 == "7-Day Rolling Average":
+    n = 1
+if selected_type2 == "Cumulative Number":
+    n = 2
+
+
+mn = 3*n+m
+
+print(mn)
+print(mn)
+print(mn)
+print(mn)
+print(mn)
+
+#st.sidebar.markdown("Choose a format")
+#rolling_average_cases = sidebar.checkbox("7-Day Rolling Average of Cases")
+#rolling_average_deaths = sidebar.checkbox("7-Day Rolling Average of Deaths")
+#rolling_average_vaccinations = sidebar.checkbox("7-Day Rolling Average of Vaccinations")
+#cumulative_number_cases = sidebar.checkbox("Cumulative Number of Cases")
+#cumulative_number_deaths = sidebar.checkbox("Cumulative Number of Deaths")
+#cumulative_number_vaccinations = sidebar.checkbox("Cumulative Number of Vaccinations")
 
 #graph_format = st.sidebar.selectbox('Choose a format', ('Raw number', '7-day rolling average', 'Cumulated number'))
 
-lines = [new_cases1, new_deaths1, new_vaccinations1, rolling_average_cases, rolling_average_deaths, rolling_average_vaccinations, cumulative_number_cases, cumulative_number_deaths, cumulative_number_vaccinations]
+#lines = [new_cases1, new_deaths1, new_vaccinations1, rolling_average_cases, rolling_average_deaths, rolling_average_vaccinations, cumulative_number_cases, cumulative_number_deaths, cumulative_number_vaccinations]
+lines = [False for i in range(9)]
+lines[mn] = True
 line_cols = ["new_cases", "new_deaths", "new_vaccinations", "rolling_average_cases", "rolling_average_deaths", "rolling_average_vaccinations", "cumulative_number_cases", "cumulative_number_deaths", "cumulative_number_vaccinations"]
 trends = [c[1] for c in zip(lines,line_cols) if c[0]==True]
+
+
+print(lines)
+print(lines)
+print(lines)
+print(lines)
+print(lines)
 
 ndf = pd.DataFrame(data=trend_data.date.unique(),columns=["date"])
 
