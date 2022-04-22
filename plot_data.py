@@ -53,9 +53,9 @@ df = df.loc[mask]
 df['7day_rolling_avg_cases_per_million'] = df['new_cases_per_million'].rolling(window=7).mean()
 df['7day_rolling_avg_deaths_per_million'] = df['new_deaths_per_million'].rolling(window=7).mean()
 df['7day_rolling_avg_vaccinations_per_million'] = df['new_vaccinations_smoothed_per_million'].rolling(window=7).mean()
-df['cumulative_number_cases_per_million'] = df['new_cases_per_million'].cumsum(axis = 0)
-df['cumulative_number_deaths_per_million'] = df['new_deaths_per_million'].cumsum(axis = 0)
-df['cumulative_number_vaccinations_per_million'] = df['new_vaccinations_smoothed_per_million'].cumsum(axis = 0)
+df['cumulative_number_cases_per_million'] = df['new_cases_per_million'].cumsum()
+df['cumulative_number_deaths_per_million'] = df['new_deaths_per_million'].cumsum()
+df['cumulative_number_vaccinations_per_million'] = df['new_vaccinations_smoothed_per_million'].cumsum()
 
 selected = sidebar.multiselect("Choose a location", locations)
 st.markdown(f"### You Selected: {', '.join(selected)}")
