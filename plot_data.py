@@ -50,12 +50,12 @@ mask = (df['date'] > start_date) & (df['date'] <= end_date)
 df = df.loc[mask]
 
 #Format of numbers
-df['7day_rolling_avg_cases'] = df['new_cases_per_million'].rolling(window=7).mean()
-df['7day_rolling_avg_deaths'] = df['new_deaths_per_million'].rolling(window=7).mean()
-df['7day_rolling_avg_vaccinations'] = df['new_vaccinations_smoothed_per_million'].rolling(window=7).mean()
-df['cumulative_number_cases'] = df['new_cases_per_million'].cumsum(axis = 0)
-df['cumulative_number_deaths'] = df['new_deaths_per_million'].cumsum(axis = 0)
-df['cumulative_number_vaccinations'] = df['new_vaccinations_smoothed_per_million'].cumsum(axis = 0)
+df['7day_rolling_avg_cases_per_million'] = df['new_cases_per_million'].rolling(window=7).mean()
+df['7day_rolling_avg_deaths_per_million'] = df['new_deaths_per_million'].rolling(window=7).mean()
+df['7day_rolling_avg_vaccinations_per_million'] = df['new_vaccinations_smoothed_per_million'].rolling(window=7).mean()
+df['cumulative_number_cases_per_million'] = df['new_cases_per_million'].cumsum(axis = 0)
+df['cumulative_number_deaths_per_million'] = df['new_deaths_per_million'].cumsum(axis = 0)
+df['cumulative_number_vaccinations_per_million'] = df['new_vaccinations_smoothed_per_million'].cumsum(axis = 0)
 
 selected = sidebar.multiselect("Choose a location", locations)
 st.markdown(f"### You Selected: {', '.join(selected)}")
@@ -114,7 +114,7 @@ print(mn)
 
 lines = [False for i in range(9)]
 lines[mn] = True
-line_cols = ["new_cases_per_million", "new_deaths_per_million", "new_vaccinations_smoothed_per_million", "rolling_average_cases", "rolling_average_deaths", "rolling_average_vaccinations", "cumulative_number_cases", "cumulative_number_deaths", "cumulative_number_vaccinations"]
+line_cols = ["new_cases_per_million", "new_deaths_per_million", "new_vaccinations_smoothed_per_million", "rolling_average_cases_per_million", "rolling_average_deaths_per_million", "rolling_average_vaccinations_per_million", "cumulative_number_cases_per_million", "cumulative_number_deaths_per_million", "cumulative_number_vaccinations_per_million"]
 trends = [c[1] for c in zip(lines,line_cols) if c[0]==True]
 
 
