@@ -144,7 +144,7 @@ if len(trends)>0:
         ax.plot(ndf["date"],ndf[new_trends[_]], label=new_trends[_])
     
     ax.set_xlabel("Date")
-    ax.set_ylabel(selected_type1+'   –   '+selected_type2)
+    ax.set_ylabel(selected_type1+'   —   '+selected_type2)
     ax.xaxis.grid(True, linestyle='--')
     ax.yaxis.grid(True, linestyle='--')
     ax.legend(loc="upper left")
