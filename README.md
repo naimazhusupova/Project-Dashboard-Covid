@@ -34,7 +34,8 @@ Part 2
 3. Click on the created environment
 4. Choose 'Open Terminal'
 5. Go to the Terminal
-6. Write `pip install -r requirements.txt` (this .txt file is provided in this repo)
+6. Move to your directory using `cd your_directory` (where you cloned this repo) command, for example `cd /Users/nazgul/Desktop/Project-Dashboard-Covid`
+7. Write `pip install -r requirements.txt` (this .txt file is provided in this repo)
 
 Note:
 In the 'requirements.txt' pip, python and pandas are not included, because they are installed by default when you create a new environment. In any case you can check if they are installed properly:
@@ -43,5 +44,9 @@ In the 'requirements.txt' pip, python and pandas are not included, because they 
 3. Choose in the drop-down menu 'Installed'
 4. Search for the required packages
 
-
-
+# How to run the dashboard locally?
+1. Open Anaconda Navigator
+2. Choose a created environment
+3. Open the terminal in your created environment (click on the play-icon button and choose "Open Terminal")
+4. Move to your directory using `cd your_directory` (where you cloned this repo) command, for example `cd /Users/nazgul/Desktop/Project-Dashboard-Covid`
+5. Write the following command `streamlit run plot_data.py`
