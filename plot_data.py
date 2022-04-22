@@ -65,12 +65,12 @@ trend_data = df.query(f"location in {selected}").\
     freq="1D")]).aggregate(new_cases=("new_cases_per_million", "sum"),
     new_deaths = ("new_deaths_per_million", "sum"),
     new_vaccinations = ("new_vaccinations_smoothed_per_million", "sum"),
-    rolling_avg_cases = ("7day_rolling_avg_cases", "sum"),
-    rolling_avg_deaths = ("7day_rolling_avg_deaths", "sum"),
-    rolling_avg_vaccinations = ("7day_rolling_avg_vaccinations", "sum"),
-    cumulative_number_cases = ("cumulative_number_cases", "sum"),
-    cumulative_number_deaths = ("cumulative_number_deaths", "sum"),
-    cumulative_number_vaccinations = ("cumulative_number_vaccinations", "sum"),
+    rolling_avg_cases = ("7day_rolling_avg_cases_per_million", "sum"),
+    rolling_avg_deaths = ("7day_rolling_avg_deaths_per_million", "sum"),
+    rolling_avg_vaccinations = ("7day_rolling_avg_vaccinations_per_million", "sum"),
+    cumulative_number_cases = ("cumulative_number_cases_per_million", "sum"),
+    cumulative_number_deaths = ("cumulative_number_deaths_per_million", "sum"),
+    cumulative_number_vaccinations = ("cumulative_number_vaccinations_per_million", "sum"),
     ).reset_index()
 
 trend_data["date"] = trend_data.date.dt.date
