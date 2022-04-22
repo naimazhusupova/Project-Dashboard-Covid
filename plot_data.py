@@ -95,11 +95,11 @@ selected_type2 = sidebar.radio("Choose a data format", ["Daily Number per Millio
 
 n = 0
 print(selected_type2)
-if selected_type2 == "Daily Number":
+if selected_type2 == "Daily Number per Million":
     n = 0
-if selected_type2 == "7-Day Rolling Average":
+if selected_type2 == "7-Day Rolling Average per Million":
     n = 1
-if selected_type2 == "Cumulative Number":
+if selected_type2 == "Cumulative Number per Million":
     n = 2
 
 
