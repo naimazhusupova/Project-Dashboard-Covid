@@ -66,6 +66,7 @@ df['cumulative_number_deaths_per_million'] = df.groupby(['location'])['new_death
 df['new_vaccinations_smoothed_per_million'] = df['new_vaccinations_smoothed_per_million'].fillna(0)
 df['cumulative_number_vaccinations_per_million'] = df.groupby(['location'])['new_vaccinations_smoothed_per_million'].cumsum(axis=0)
 
+
 selected = sidebar.multiselect("Choose a location", locations)
 st.markdown(f"### You Selected: {', '.join(selected)}")
 
@@ -85,7 +86,6 @@ trend_data = df.query(f"location in {selected}").\
 trend_data["date"] = trend_data.date.dt.date
 
 
-#selected_type = sidebar.selectbox("Choose a data type", ["New Cases", "New Deaths", "New Vaccinations"])
 
 selected_type1 = sidebar.radio("Choose a data type", ["New Cases", "New Deaths", "New Vaccinations"])
 
@@ -114,24 +114,12 @@ if selected_type2 == "Cumulative Number per Million":
 
 mn = 3*n+m
 
-print(mn)
-print(mn)
-print(mn)
-print(mn)
-print(mn)
-
 
 lines = [False for i in range(9)]
 lines[mn] = True
 line_cols = ["new_cases_per_million", "new_deaths_per_million", "new_vaccinations_smoothed_per_million", "rolling_average_cases_per_million", "rolling_average_deaths_per_million", "rolling_average_vaccinations_per_million", "cumulative_number_cases_per_million", "cumulative_number_deaths_per_million", "cumulative_number_vaccinations_per_million"]
 trends = [c[1] for c in zip(lines,line_cols) if c[0]==True]
 
-
-print(lines)
-print(lines)
-print(lines)
-print(lines)
-print(lines)
 
 ndf = pd.DataFrame(data=trend_data.date.unique(),columns=["date"])
 
