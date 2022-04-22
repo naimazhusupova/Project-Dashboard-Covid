@@ -91,7 +91,7 @@ if selected_type1 == "New Vaccinations":
 
 
 
-selected_type2 = sidebar.radio("Choose a data format", ["Daily Number", "7-Day Rolling Average", "Cumulative Number"])
+selected_type2 = sidebar.radio("Choose a data format", ["Daily Number per Million", "7-Day Rolling Average per Million", "Cumulative Number per Million"])
 
 n = 0
 print(selected_type2)
