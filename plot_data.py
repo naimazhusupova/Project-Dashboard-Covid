@@ -2,7 +2,6 @@ import streamlit as st
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-#import cufflinks
 import datetime
 
 st.title('COVID-19 Dashboard')
@@ -51,21 +50,21 @@ mask = (df['date'] > start_date) & (df['date'] <= end_date)
 df = df.loc[mask]
 
 #Format of numbers
-df['7day_rolling_avg_cases'] = df['new_cases'].rolling(window=7).mean()
-df['7day_rolling_avg_deaths'] = df['new_deaths'].rolling(window=7).mean()
-df['7day_rolling_avg_vaccinations'] = df['new_vaccinations'].rolling(window=7).mean()
-df['cumulative_number_cases'] = df['new_cases'].cumsum(axis = 0)
-df['cumulative_number_deaths'] = df['new_deaths'].cumsum(axis = 0)
-df['cumulative_number_vaccinations'] = df['new_vaccinations'].cumsum(axis = 0)
+df['7day_rolling_avg_cases'] = df['new_cases_per_million'].rolling(window=7).mean()
+df['7day_rolling_avg_deaths'] = df['new_deaths_per_million'].rolling(window=7).mean()
+df['7day_rolling_avg_vaccinations'] = df['new_vaccinations_smoothed_per_million'].rolling(window=7).mean()
+df['cumulative_number_cases'] = df['new_cases_per_million'].cumsum(axis = 0)
+df['cumulative_number_deaths'] = df['new_deaths_per_million'].cumsum(axis = 0)
+df['cumulative_number_vaccinations'] = df['new_vaccinations_smoothed_per_million'].cumsum(axis = 0)
 
 selected = sidebar.multiselect("Choose a location", locations)
 st.markdown(f"### You Selected: {', '.join(selected)}")
 
 trend_data = df.query(f"location in {selected}").\
     groupby(["location", pd.Grouper(key="date", 
-    freq="1D")]).aggregate(new_cases=("new_cases", "sum"),
-    new_deaths = ("new_deaths", "sum"),
-    new_vaccinations = ("new_vaccinations", "sum"),
+    freq="1D")]).aggregate(new_cases=("new_cases_per_million", "sum"),
+    new_deaths = ("new_deaths_per_million", "sum"),
+    new_vaccinations = ("new_vaccinations_per_million", "sum"),
     rolling_avg_cases = ("7day_rolling_avg_cases", "sum"),
     rolling_avg_deaths = ("7day_rolling_avg_deaths", "sum"),
     rolling_avg_vaccinations = ("7day_rolling_avg_vaccinations", "sum"),
@@ -91,11 +90,6 @@ if selected_type1 == "New Vaccinations":
     m = 2
 
 
-#st.sidebar.markdown("Choose a data")
-#new_cases = sidebar.checkbox("New Cases")
-#new_deaths = sidebar.checkbox("New Deaths")
-#new_vaccinations = sidebar.checkbox("New Vaccinations")
-
 
 selected_type2 = sidebar.radio("Choose a data format", ["Daily Number", "7-Day Rolling Average", "Cumulative Number"])
 
@@ -117,20 +111,10 @@ print(mn)
 print(mn)
 print(mn)
 
-#st.sidebar.markdown("Choose a format")
-#rolling_average_cases = sidebar.checkbox("7-Day Rolling Average of Cases")
-#rolling_average_deaths = sidebar.checkbox("7-Day Rolling Average of Deaths")
-#rolling_average_vaccinations = sidebar.checkbox("7-Day Rolling Average of Vaccinations")
-#cumulative_number_cases = sidebar.checkbox("Cumulative Number of Cases")
-#cumulative_number_deaths = sidebar.checkbox("Cumulative Number of Deaths")
-#cumulative_number_vaccinations = sidebar.checkbox("Cumulative Number of Vaccinations")
 
-#graph_format = st.sidebar.selectbox('Choose a format', ('Raw number', '7-day rolling average', 'Cumulated number'))
-
-#lines = [new_cases1, new_deaths1, new_vaccinations1, rolling_average_cases, rolling_average_deaths, rolling_average_vaccinations, cumulative_number_cases, cumulative_number_deaths, cumulative_number_vaccinations]
 lines = [False for i in range(9)]
 lines[mn] = True
-line_cols = ["new_cases", "new_deaths", "new_vaccinations", "rolling_average_cases", "rolling_average_deaths", "rolling_average_vaccinations", "cumulative_number_cases", "cumulative_number_deaths", "cumulative_number_vaccinations"]
+line_cols = ["new_cases_per_million", "new_deaths_per_million", "new_vaccinations_smoothed_per_million", "rolling_average_cases", "rolling_average_deaths", "rolling_average_vaccinations", "cumulative_number_cases", "cumulative_number_deaths", "cumulative_number_vaccinations"]
 trends = [c[1] for c in zip(lines,line_cols) if c[0]==True]
 
 
@@ -156,20 +140,12 @@ for c in trends:
 
 
 if len(trends)>0:
-    #st.markdown("### Trend of Selected Locations")
-
-    # Plot using Cufflinks
-    #fig = ndf.iplot(kind="line", asFigure=True, xTitle="Date", yTitle="Values",
-    #                    x="date", y=new_trends, title=f"Data for {', '.join(trends)}.", subplots=False)
-    #st.plotly_chart(fig, use_container_width=False)
-
-    # Plot using Matplotlib
+    
     fig = plt.figure(figsize=(7,4))
     ax = fig.add_subplot(1,1,1)
     for _ in range(0,len(new_trends)):
         ax.plot(ndf["date"],ndf[new_trends[_]], label=new_trends[_])
-    #ax.plot(ndf["date"],ndf[new_trends[0]])
-    #ax = ndf.plot(x="date", y=new_trends[0])
+    
     ax.set_xlabel("Date")
     ax.set_ylabel("Values")
     ax.xaxis.grid(True, linestyle='--')
