@@ -56,9 +56,15 @@ df = df.loc[mask]
 df['7day_rolling_avg_cases_per_million'] = df['new_cases_per_million'].rolling(window=7).mean()
 df['7day_rolling_avg_deaths_per_million'] = df['new_deaths_per_million'].rolling(window=7).mean()
 df['7day_rolling_avg_vaccinations_per_million'] = df['new_vaccinations_smoothed_per_million'].rolling(window=7).mean()
-df['cumulative_number_cases_per_million'] = df['new_cases_per_million'].cumsum()
-df['cumulative_number_deaths_per_million'] = df['new_deaths_per_million'].cumsum()
-df['cumulative_number_vaccinations_per_million'] = df['new_vaccinations_smoothed_per_million'].cumsum()
+
+df=df.sort_values(['date']).reset_index(drop=True)
+
+df['new_cases_per_million'] = df['new_cases_per_million'].fillna(0)
+df['cumulative_number_cases_per_million'] = df.groupby(['location'])['new_cases_per_million'].cumsum(axis=0)
+df['new_deaths_per_million'] = df['new_deaths_per_million'].fillna(0)
+df['cumulative_number_deaths_per_million'] = df.groupby(['location'])['new_deaths_per_million'].cumsum(axis=0)
+df['new_vaccinations_smoothed_per_million'] = df['new_vaccinations_smoothed_per_million'].fillna(0)
+df['cumulative_number_vaccinations_per_million'] = df.groupby(['location'])['new_vaccinations_smoothed_per_million'].cumsum(axis=0)
 
 selected = sidebar.multiselect("Choose a location", locations)
 st.markdown(f"### You Selected: {', '.join(selected)}")
