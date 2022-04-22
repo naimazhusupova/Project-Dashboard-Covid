@@ -7,7 +7,7 @@ import datetime
 st.title('COVID-19 Dashboard')
 st.markdown('This Dashboard displays the worldwide cases and deaths of Covid-19 over time. It is based on the data by Our World in Data. This includes the information about positive cases, deaths and vaccinations per country.')
 st.sidebar.title("Category Filter")
-st.sidebar.markdown("Here we will give further information about our project or implement some cool widgets!")
+st.sidebar.markdown("Please choose your options for data display")
 
 #Data Caching
 @st.cache
