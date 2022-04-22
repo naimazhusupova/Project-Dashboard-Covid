@@ -67,7 +67,7 @@ df['new_vaccinations_smoothed_per_million'] = df['new_vaccinations_smoothed_per_
 df['cumulative_number_vaccinations_per_million'] = df.groupby(['location'])['new_vaccinations_smoothed_per_million'].cumsum(axis=0)
 
 
-selected = sidebar.multiselect("Choose a location", locations)
+selected = sidebar.multiselect("Choose a location", locations, default=["France"])
 st.markdown(f"### You Selected: {', '.join(selected)}")
 
 trend_data = df.query(f"location in {selected}").\
