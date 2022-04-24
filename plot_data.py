@@ -151,4 +151,4 @@ if selected_type2 == "Cumulative Number per Million":
             deriv_ndf = ( ndf[new_trends[_]] - ndf[new_trends[_]].shift(1) ) / 1
             max_val = np.max(deriv_ndf)
             date_max_val = ndf["date"][np.argmax(deriv_ndf)]
-            st.markdown("Peak value for **"+selected[_]+"** and **"+selected_type1+"**: **"+str(round(max_val,2))+"**, on date: **"+str(date_max_val)+"**")
+            st.markdown("Peak value for **"+selected[_]+"** and **"+selected_type1+"**(per Million): **"+str(round(max_val,2))+"**, on date: **"+str(date_max_val)+"**")
