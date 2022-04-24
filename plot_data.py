@@ -5,11 +5,9 @@ import numpy as np
 import pandas as pd
 import datetime
 
-# Titles and sub titles
+# Main titles and description
 st.title('COVID-19 Dashboard')
 st.markdown('This Dashboard displays the worldwide cases and deaths of Covid-19 over time. It is based on the data by Our World in Data. This includes the information about positive cases, deaths and vaccinations per country.')
-st.sidebar.title("Category Filter")
-st.sidebar.markdown("Please choose your options for data display")
 
 # Data Caching
 @st.cache
@@ -30,18 +28,20 @@ locations_to_remove = ['Africa', 'Asia', 'Australia', 'Europe', 'European Union'
 for loc in locations_to_remove:
     locations.remove(loc)
 
-# Defining sidebar
+# Defining sidebar and titles
 sidebar = st.sidebar
+sidebar.title("Category Filter")
+sidebar.markdown("Please choose your options for data display")
 
 # Date selection
-st.sidebar.markdown("Choose a date")
-start_date = st.sidebar.date_input('Start date', datetime.date(2020, 2, 24))
+sidebar.markdown("Choose a date")
+start_date = sidebar.date_input('Start date', datetime.date(2020, 2, 24))
 tomorrow = datetime.date.today() + datetime.timedelta(days=1)
-end_date = st.sidebar.date_input('End date', tomorrow)
+end_date = sidebar.date_input('End date', tomorrow)
 if start_date < end_date:
-    st.sidebar.success('Start date: `%s`\n\nEnd date:`%s`' % (start_date, end_date))
+    sidebar.success('Start date: `%s`\n\nEnd date:`%s`' % (start_date, end_date))
 else:
-    st.sidebar.error('Error: End date must fall after start date.')
+    sidebar.error('Error: End date must fall after start date.')
 
 # Filtering by date
 start_date = np.datetime64(start_date)
@@ -141,14 +141,14 @@ if len(trends)>0:
 
 # Extraction of Peaks
 if selected_type2 == "Cumulative Number per Million":
-    st.sidebar.markdown("Choose to find the peak of cumulative")
+    sidebar.markdown("Choose to find the peak of cumulative")
     peak_on_off = sidebar.checkbox("Find Peak")
 
     if peak_on_off == True:
         st.markdown(f"### Peak values:")
 
-        for _ in range(0,len(new_trends)):
+        for _ in range(0,len(selected)):
             deriv_ndf = ( ndf[new_trends[_]] - ndf[new_trends[_]].shift(1) ) / 1
             max_val = np.max(deriv_ndf)
             date_max_val = ndf["date"][np.argmax(deriv_ndf)]
-            st.markdown("Peak value for "+new_trends[_]+": "+str(round(max_val,2))+" , on date: "+str(date_max_val))
+            st.markdown("Peak value for **"+selected[_]+"** and **"+selected_type1+"** based on cummulative number: **"+str(round(max_val,2))+"**, on date: **"+str(date_max_val)+"**")
