@@ -161,8 +161,8 @@ if selected_type2 == "Cumulative Number per Million":
         for _ in range(0,len(new_trends)):
             deriv_ndf = ( ndf[new_trends[_]] - ndf[new_trends[_]].shift(1) ) / 1
             max_val = np.max(deriv_ndf)
-            index_max_val = ndf["date"][np.argmax(deriv_ndf)]
-            st.markdown("Peak value for "+new_trends[_]+": "+str(round(max_val,2))+" , on date: "+str(index_max_val))
+            date_max_val = ndf["date"][np.argmax(deriv_ndf)]
+            st.markdown("Peak value for "+new_trends[_]+": "+str(round(max_val,2))+" , on date: "+str(date_max_val))
 
 
 
