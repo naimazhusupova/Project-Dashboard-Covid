@@ -109,7 +109,6 @@ lines[mn] = True
 line_cols = ["new_cases_per_million", "new_deaths_per_million", "new_vaccinations_smoothed_per_million", "rolling_average_cases_per_million", "rolling_average_deaths_per_million", "rolling_average_vaccinations_per_million", "cumulative_number_cases_per_million", "cumulative_number_deaths_per_million", "cumulative_number_vaccinations_per_million"]
 trends = [c[1] for c in zip(lines,line_cols) if c[0]==True]
 
-
 ndf = pd.DataFrame(data=trend_data.date.unique(),columns=["date"])
 
 # Selecting the countries
@@ -153,4 +152,3 @@ if selected_type2 == "Cumulative Number per Million":
             max_val = np.max(deriv_ndf)
             date_max_val = ndf["date"][np.argmax(deriv_ndf)]
             st.markdown("Peak value for "+new_trends[_]+": "+str(round(max_val,2))+" , on date: "+str(date_max_val))
-
