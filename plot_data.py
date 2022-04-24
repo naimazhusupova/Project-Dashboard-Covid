@@ -156,7 +156,20 @@ if len(trends)>0:
         st.markdown("Peak value for "+new_trends[_]+": "+str(int(ndf[new_trends[_]].max()))+" ,  date: "+str(ndf["date"][ndf[new_trends[_]].idxmax()]))
 
 
-    print(list(new_trends))
+
+if selected_type2 == "Cumulative Number per Million":
+    st.sidebar.markdown("Choose to find the peak of cumulative")
+    peak_on_off = sidebar.checkbox("Select Peak")
+
+    if peak_on_off == True:
+        st.markdown(f"### Peak values:")
+
+        for _ in range(0,len(new_trends)):
+            deriv_ndf = ( ndf[new_trends[_]] - ndf[new_trends[_]].shift(1) ) / 1
+            max_val = np.max(deriv_ndf)
+            index_max_val = ndf["date"][np.argmax(deriv_ndf)]
+            st.markdown("Peak value for "+new_trends[_]+": "+str(round(max_val,2))+" , on date: "+str(index_max_val))
+
 
 
     
