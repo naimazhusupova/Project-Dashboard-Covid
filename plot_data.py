@@ -66,7 +66,7 @@ df['cumulative_number_vaccinations_per_million'] = df.groupby(['location'])['new
 
 # Selecting the country
 selected = sidebar.multiselect("Choose a location", locations, default=["France"])
-st.markdown(f"### You Selected: {', '.join(selected)}")
+st.markdown(f"### Selected countries: {', '.join(selected)}")
 
 # Filtering and grouping by country
 trend_data = df.query(f"location in {selected}").\
