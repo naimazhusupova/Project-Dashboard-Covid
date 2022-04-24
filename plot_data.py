@@ -145,10 +145,10 @@ if selected_type2 == "Cumulative Number per Million":
     peak_on_off = sidebar.checkbox("Find Peak")
 
     if peak_on_off == True:
-        st.markdown(f"### Peak values:")
+        st.markdown(f"### Peak values based on cummulative number:")
 
         for _ in range(0,len(selected)):
             deriv_ndf = ( ndf[new_trends[_]] - ndf[new_trends[_]].shift(1) ) / 1
             max_val = np.max(deriv_ndf)
             date_max_val = ndf["date"][np.argmax(deriv_ndf)]
-            st.markdown("Peak value for **"+selected[_]+"** and **"+selected_type1+"** based on cummulative number: **"+str(round(max_val,2))+"**, on date: **"+str(date_max_val)+"**")
+            st.markdown("Peak value for **"+selected[_]+"** and **"+selected_type1+"**: **"+str(round(max_val,2))+"**, on date: **"+str(date_max_val)+"**")
