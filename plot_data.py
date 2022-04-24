@@ -143,11 +143,11 @@ if len(trends)>0:
         ax.plot(ndf["date"],ndf[new_trends[_]], label=new_trends[_])
     
     ax.set_xlabel("Date")
-    ax.set_ylabel(selected_type1+'   —   '+selected_type2)
+    ax.set_ylabel(selected_type1+'  —  '+selected_type2)
     ax.xaxis.grid(True, linestyle='--')
     ax.yaxis.grid(True, linestyle='--')
     ax.legend(loc="upper left")
-    fig.subplots_adjust(left=0, bottom=0, right=1, top=1, wspace=0, hspace=0)
+    fig.subplots_adjust(left=0,bottom=0,right=1,top=0.92,wspace=0,hspace=0)
     st.plotly_chart(fig, use_container_width=False)
 
 
