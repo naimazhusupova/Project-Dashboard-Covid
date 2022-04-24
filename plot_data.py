@@ -154,7 +154,7 @@ if len(trends)>0:
 
 if selected_type2 == "Cumulative Number per Million":
     st.sidebar.markdown("Choose to find the peak of cumulative")
-    peak_on_off = sidebar.checkbox("Select Peak")
+    peak_on_off = sidebar.checkbox("Find Peak")
 
     if peak_on_off == True:
         st.markdown(f"### Peak values:")
