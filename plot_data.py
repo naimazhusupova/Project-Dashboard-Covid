@@ -138,8 +138,7 @@ for c in trends:
 
 if len(trends)>0:
     
-    fig = plt.figure(figsize=(7,4))
-    ax = fig.add_subplot(1,1,1)
+    fig, ax = plt.subplots(1, 1, figsize=(7, 4))
     for _ in range(0,len(new_trends)):
         ax.plot(ndf["date"],ndf[new_trends[_]], label=new_trends[_])
     
