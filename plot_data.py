@@ -151,11 +151,6 @@ if len(trends)>0:
     fig.subplots_adjust(left=0, bottom=0, right=1, top=1, wspace=0, hspace=0)
     st.plotly_chart(fig, use_container_width=False)
 
-    st.markdown(f"### Peak values:")
-    for _ in range(0,len(new_trends)):
-        st.markdown("Peak value for "+new_trends[_]+": "+str(int(ndf[new_trends[_]].max()))+" ,  date: "+str(ndf["date"][ndf[new_trends[_]].idxmax()]))
-
-
 
 if selected_type2 == "Cumulative Number per Million":
     st.sidebar.markdown("Choose to find the peak of cumulative")
