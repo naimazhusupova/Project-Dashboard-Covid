@@ -25,7 +25,7 @@ Part 1: Installing Anaconda
 1. If you do not have Anaconda, install it on your computer in accordance with your operating system
 2. You can find the instructions [here]( https://docs.anaconda.com/anaconda/install/) based on your operating system
 
-Part 2: Creating virtual environment
+Part 2: Creating virtual environment and activate it (using Anaconda Navigator)
 1. Open Anaconda Navigator
 2. Create new environment based on the settings:
     - Click on Environments
@@ -33,15 +33,21 @@ Part 2: Creating virtual environment
     - Name an environment (for example: My_Environment)
     - Choose Python version 3.8.12
     - Click 'Create'
-3. Click on the created environment
-4. Choose 'Open Terminal'
+3. To activate the environment: click on the created environment (click on the play-icon button and choose "Open Terminal")
+4. Choose 'Open Terminal' and continue with Part 3
+
+Part 2: Creating virtual environment and activate it (using Anaconda Terminal)
+1. Open Anaconda Terminal
+2. Create new environment writing: `conda create -n My_Environment python=3.8.12`
+3. To activate the environment: `conda activate My_Environment`
+4. Stay in the Terminal and continue with Part 3
 
 Part 3: Cloning and installing dependencies
 1. After Part 2, go to the opened Terminal
-2. Move to the directory where you want to clone theis repo. So, write in the terminal: `cd /<any_folder>/`
+2. Move to the directory where you want to clone this repo. So, write in the terminal: `cd /<any_folder>/`
 3. Clone the respository using the following command in the terminal: `git clone git@github.com:naimazhusupova/Project-Dashboard-Covid.git`
 4. Move to the folder of the cloned repo `cd /.../Project-Dashboard-Covid` (where you cloned this repo) command, e.g. `cd /Users/nazgul/Desktop/Project-Dashboard-Covid`
-5. Install the dependencies by writting in the Terminal: `pip install -r requirements.txt` (this .txt file is provided in this repo)
+5. Install the dependencies by writing in the Terminal: `pip install -r requirements.txt` (this .txt file is provided in this repo)
 
 Note:
 In the 'requirements.txt' packages as pip and others are not included, because they are installed by default when you create a new environment using Anaconda. In any case you can check if they are installed properly:
