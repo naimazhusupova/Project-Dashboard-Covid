@@ -13,7 +13,9 @@
 This project repository contains the description, tools and instructions to replicate our dashboard with information about Covid-19. This project was developed in the context of the Open Source course of the Master's programme in Digital Science, Université Paris Cité. You can check the deployed dashboard [**here**](https://share.streamlit.io/naimazhusupova/project-dashboard-covid/main/plot_data.py) (Streamlit Cloud), a screenshot of our deployed dashboard is shown below.
 
 <p align="center">
-<img src=".images/screenshot-dashboard.png" alt="image" width="680" border="5"/>
+    <kbd>
+        <img src=".images/screenshot-dashboard.png" alt="image" width="680" border="5"/>
+    </kbd>
 </p>
 
 
