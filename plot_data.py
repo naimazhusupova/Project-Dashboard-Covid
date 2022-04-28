@@ -152,3 +152,7 @@ if selected_type2 == "Cumulative Number per Million":
             max_val = np.max(deriv_ndf)
             date_max_val = ndf["date"][np.argmax(deriv_ndf)]
             st.markdown("Peak value for **"+selected[_]+"** and **"+selected_type1+"** (per Million): **"+str(round(max_val,2))+"**, on date: **"+str(date_max_val)+"**")
+
+
+
+sidebar.markdown("Find our repository on [here](https://github.com/naimazhusupova/Project-Dashboard-Covid)")
