@@ -35,11 +35,13 @@ Part 2
 3. Click on the created environment
 4. Choose 'Open Terminal'
 5. Go to the Terminal
-6. Move to your directory using `cd your_directory` (where you cloned this repo) command, for example `cd /Users/nazgul/Desktop/Project-Dashboard-Covid`
-7. Write `pip install -r requirements.txt` (this .txt file is provided in this repo)
+6. Move to the directory where you want to clone theis repo. So, write in the terminal: `cd /<any_folder>/`
+7. Clone the respository using the following command in the terminal: `git clone git@github.com:naimazhusupova/Project-Dashboard-Covid.git`
+8. Move to the folder of the cloned repo `cd /.../Project-Dashboard-Covid` (where you cloned this repo) command, e.g. `cd /Users/nazgul/Desktop/Project-Dashboard-Covid`
+9. Write in the Terminal: `pip install -r requirements.txt` (this .txt file is provided in this repo)
 
 Note:
-In the 'requirements.txt' pip, python and pandas are not included, because they are installed by default when you create a new environment using Anaconda. In any case you can check if they are installed properly:
+In the 'requirements.txt' pip, pandas among others are not included, because they are installed by default when you create a new environment using Anaconda. In any case you can check if they are installed properly:
 1. Go to Anaconda Navigator
 2. Go to your environment
 3. Choose in the drop-down menu 'Installed'
