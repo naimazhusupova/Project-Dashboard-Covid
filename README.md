@@ -110,7 +110,7 @@ In the 'requirements.txt' packages as pip and others are not included, because t
 
 ## License
 
-[MIT License](https://github.com/naimazhusupova/Project-Dashboard-Covid/blob/main/LICENSE)
+- [MIT License](https://github.com/naimazhusupova/Project-Dashboard-Covid/blob/main/LICENSE)
 
 
 ## References
