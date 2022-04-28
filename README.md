@@ -12,7 +12,13 @@ This project repository contains the description, tools and instructions to repl
 
 ## Dataset Source
 
-For this dashboard we use Streamlit for the vizualization based on the dataset [COVID-19 Dataset by Our World in Data](https://github.com/owid/covid-19-data/blob/master/public/data/README.md), which is a collection of the COVID-19 data maintained by 'Our World in Data' team.
+For this dashboard we use Streamlit for the vizualization based on the dataset [COVID-19 Dataset by Our World in Data](https://github.com/owid/covid-19-data/blob/master/public/data/README.md), which is a collection of the COVID-19 data maintained by 'Our World in Data' team. According to its website, the variables come from:
+
+- **Confirmed cases and deaths:** the data comes from the COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University (JHU). The cases & deaths dataset is updated daily.
+
+- **Vaccinations against COVID-19:** this data is collected by the _Our World in Data_ team from official reports.
+
+- **Other variables:** this data is collected from a variety of sources (United Nations, World Bank, Global Burden of Disease, Blavatnik School of Government, etc.). 
 
 
 ## Interaction and Visualization
