@@ -21,7 +21,7 @@ Instead of installing every package manually we created a requirements.txt file 
 
 Follow the next steps in order to install all required dependencies (e.g. Pandas, Matplotlib, Streamlit, ...):
 
-Part 1: Installing Anacaonda
+Part 1: Installing Anaconda
 1. If you do not have Anaconda, install it on your computer in accordance with your operating system
 2. You can find the instructions [here]( https://docs.anaconda.com/anaconda/install/) based on your operating system
 
