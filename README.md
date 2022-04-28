@@ -112,7 +112,7 @@ In the 'requirements.txt' packages as pip and others are not included, because t
 
 ## License
 
-- [MIT License](https://github.com/naimazhusupova/Project-Dashboard-Covid/blob/main/LICENSE)
+This project is licensed under the MIT License, see the [LICENSE](https://github.com/naimazhusupova/Project-Dashboard-Covid/blob/main/LICENSE) file for details
 
 
 ## References
