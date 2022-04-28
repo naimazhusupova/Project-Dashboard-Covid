@@ -12,7 +12,7 @@ This project repository contains the description, tools and instructions to repl
 
 ## Dataset Source
 
-For this dashboard we use Streamlit for the vizualization based on a dataset [COVID-19 Dataset by Our World in Data](https://github.com/owid/covid-19-data/blob/master/public/data/README.md) 
+For this dashboard we use Streamlit for the vizualization based on the dataset [COVID-19 Dataset by Our World in Data](https://github.com/owid/covid-19-data/blob/master/public/data/README.md), which is a collection of the COVID-19 data maintained by 'Our World in Data' team.
 
 
 ## Interaction and Visualization
