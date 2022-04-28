@@ -154,7 +154,7 @@ if selected_type2 == "Cumulative Number per Million":
             st.markdown("Peak value for **"+selected[_]+"** and **"+selected_type1+"** (per Million): **"+str(round(max_val,2))+"**, on date: **"+str(date_max_val)+"**")
 
 
-
-sidebar.markdown("   ")
-sidebar.markdown("   ")
+sidebar.markdown(" ")
+sidebar.markdown(" ")
+sidebar.markdown(" ")
 sidebar.markdown("Find our repository [here](https://github.com/naimazhusupova/Project-Dashboard-Covid)")
