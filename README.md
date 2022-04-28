@@ -57,10 +57,19 @@ In the 'requirements.txt' packages as pip and others are not included, because t
 4. Search for the required packages
 
 
-## Run the dashboard locally
+## Run the dashboard locally (using Anaconda Navigator)
 
 1. Open Anaconda Navigator
-2. Choose a created environment
+2. Activate your environment by: choosing a created environment (My_Environment) and open the terminal in your created environment (click on the play-icon button and choose "Open Terminal")
+4. Move to your directory using `cd your_directory` (where you cloned this repo) command, for example `cd /Users/nazgul/Desktop/Project-Dashboard-Covid`
+5. Write the following command `streamlit run plot_data.py`
+6. Finally, the dashboard will be automatically displayed in your default browser
+
+
+## Run the dashboard locally (using Anaconda Terminal)
+
+1. Open Anaconda Terminal
+2. Activate your environment by: `conda activate My_Environment`
 3. Open the terminal in your created environment (click on the play-icon button and choose "Open Terminal")
 4. Move to your directory using `cd your_directory` (where you cloned this repo) command, for example `cd /Users/nazgul/Desktop/Project-Dashboard-Covid`
 5. Write the following command `streamlit run plot_data.py`
