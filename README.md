@@ -1,8 +1,6 @@
 # Project-Dashboard-Covid
 
-Software Heritage Repository
-
-[![SWH](https://archive.softwareheritage.org/badge/swh:1:dir:4344038aa64c26473fefb27c4dd8cca0c4748fc3/)](https://archive.softwareheritage.org/swh:1:dir:4344038aa64c26473fefb27c4dd8cca0c4748fc3;origin=https://github.com/naimazhusupova/Project-Dashboard-Covid;visit=swh:1:snp:2f48c1ea827e9550fc13ff660892cbac08d5a9a4;anchor=swh:1:rev:e9ceed24df5c4a852c30a152e7a741dbfdad9efc)
+Software Heritage Repository: [![SWH](https://archive.softwareheritage.org/badge/swh:1:dir:4344038aa64c26473fefb27c4dd8cca0c4748fc3/)](https://archive.softwareheritage.org/swh:1:dir:4344038aa64c26473fefb27c4dd8cca0c4748fc3;origin=https://github.com/naimazhusupova/Project-Dashboard-Covid;visit=swh:1:snp:2f48c1ea827e9550fc13ff660892cbac08d5a9a4;anchor=swh:1:rev:e9ceed24df5c4a852c30a152e7a741dbfdad9efc)
 
 This project repo contains the description, tools and instructions to replicate our dashboard with information about Covid-19. 
 
@@ -12,12 +10,13 @@ Our dashboard is interactive and allows the user to:
 1. Select which countries to display (among a pre-defined list).
 2. Select which time period to display (i.e. user could choose start and finish dates).
 3. Select which variable(s) to display: number / cumulated number / 7-day rolling average of confirmed cases / deaths / (recovered).
+4. Select to show the peak when cumulated number was chossen.
 
 # Installing Dependencies
 
 Instead of installing every package manually we created a requirements.txt file and by running it once, all the necessary packages will be installed.
 
-Follow the next steps in order to install all required dependencies (Python, Pandas, Matplotlib, Jupyter Lab, Streamlit...):
+Follow the next steps in order to install all required dependencies (e.g. Pandas, Matplotlib, Streamlit, ...):
 
 Part 1
 1. If you do not have Anaconda, install it on your computer in accordance with your operating system
@@ -38,7 +37,7 @@ Part 2
 7. Write `pip install -r requirements.txt` (this .txt file is provided in this repo)
 
 Note:
-In the 'requirements.txt' pip, python and pandas are not included, because they are installed by default when you create a new environment. In any case you can check if they are installed properly:
+In the 'requirements.txt' pip, python and pandas are not included, because they are installed by default when you create a new environment using Anaconda. In any case you can check if they are installed properly:
 1. Go to Anaconda Navigator
 2. Go to your environment
 3. Choose in the drop-down menu 'Installed'
@@ -50,3 +49,4 @@ In the 'requirements.txt' pip, python and pandas are not included, because they 
 3. Open the terminal in your created environment (click on the play-icon button and choose "Open Terminal")
 4. Move to your directory using `cd your_directory` (where you cloned this repo) command, for example `cd /Users/nazgul/Desktop/Project-Dashboard-Covid`
 5. Write the following command `streamlit run plot_data.py`
+6. Then, the dashboard will be visualized in your default browser
