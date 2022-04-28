@@ -10,7 +10,7 @@
 
 ## Description
 
-This project repository contains the description, tools and instructions to replicate our dashboard with information about Covid-19. This project was developed in the context of the Open Source course of the Master's programme in Digital Science, Université Paris Cité. You can check the deployed dashboard [**here**](https://share.streamlit.io/naimazhusupova/project-dashboard-covid/main/plot_data.py) (Streamlit Cloud), a screenshot of our deployed dashboard is shown below.
+This project repository contains the description, tools and instructions to replicate our dashboard with information about Covid-19. This project was developed in the context of the Open Source course of the Master's program in Digital Sciences, Université Paris Cité. You can check the deployed dashboard [**here**](https://share.streamlit.io/naimazhusupova/project-dashboard-covid/main/plot_data.py) (Streamlit Cloud), a screenshot of our deployed dashboard is shown below.
 
 <p align="center">
     <kbd>
@@ -21,7 +21,7 @@ This project repository contains the description, tools and instructions to repl
 
 ## Dataset Source
 
-For this dashboard we use Streamlit for the vizualization based on the dataset [COVID-19 Dataset by Our World in Data](https://github.com/owid/covid-19-data/blob/master/public/data/README.md), which is a collection of the COVID-19 data maintained by 'Our World in Data' team. According to its website, the variables come from:
+For this dashboard we use Streamlit for the vizualization based on the dataset [COVID-19 Dataset by Our World in Data](https://github.com/owid/covid-19-data/blob/master/public/data/README.md), which is a collection of the COVID-19 data maintained by 'Our World in Data' team. According to this website, the variables come from:
 
 - **Confirmed cases and deaths:** the data comes from the COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University (JHU). The cases & deaths dataset is updated daily.
 
@@ -37,7 +37,7 @@ Our dashboard is interactive and allows the user to:
 1. Select which countries to display (among a pre-defined list).
 2. Select which time period to display (i.e. user could choose start and finish dates).
 3. Select which variable(s) to display: number / cumulated number / 7-day rolling average of confirmed cases / deaths / (recovered).
-4. Select to show the peak when cumulated number was chossen.
+4. Select to show the peak when cumulated number is chosen.
 
 
 ## Cloning and Installing Dependencies
