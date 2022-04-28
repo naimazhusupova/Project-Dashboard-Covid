@@ -4,11 +4,21 @@ Link to Software Heritage Repository:
 
 [![SWH](https://archive.softwareheritage.org/badge/swh:1:dir:4344038aa64c26473fefb27c4dd8cca0c4748fc3/)](https://archive.softwareheritage.org/swh:1:dir:4344038aa64c26473fefb27c4dd8cca0c4748fc3;origin=https://github.com/naimazhusupova/Project-Dashboard-Covid;visit=swh:1:snp:2f48c1ea827e9550fc13ff660892cbac08d5a9a4;anchor=swh:1:rev:e9ceed24df5c4a852c30a152e7a741dbfdad9efc)
 
+
+## Description
+
 This project repository contains the description, tools and instructions to replicate our dashboard with information about Covid-19. You can check the deployed dashboard [here](https://share.streamlit.io/naimazhusupova/project-dashboard-covid/main/plot_data.py) (Streamlit Cloud).
+
+
+## Dataset Source
 
 For this dashboard we use Streamlit for the vizualization based on a dataset [COVID-19 Dataset by Our World in Data](https://github.com/owid/covid-19-data/blob/master/public/data/README.md) 
 
+
+## Interaction and Visualization
+
 Our dashboard is interactive and allows the user to:
+
 1. Select which countries to display (among a pre-defined list).
 2. Select which time period to display (i.e. user could choose start and finish dates).
 3. Select which variable(s) to display: number / cumulated number / 7-day rolling average of confirmed cases / deaths / (recovered).
