@@ -86,19 +86,18 @@ In the 'requirements.txt' packages as pip and others are not included, because t
 
 1. Open Anaconda Navigator
 2. Activate your environment by: choosing a created environment (My_Environment) and open the terminal in your created environment (click on the play-icon button and choose "Open Terminal")
-4. Move to your directory using `cd your_directory` (where you cloned this repo) command, for example `cd /Users/nazgul/Desktop/Project-Dashboard-Covid`
-5. Write the following command `streamlit run plot_data.py`
-6. Finally, the dashboard will be automatically displayed in your default browser
+3. Move to your directory using `cd your_directory` (where you cloned this repo) command, for example `cd /Users/nazgul/Desktop/Project-Dashboard-Covid`
+4. Write the following command `streamlit run plot_data.py`
+5. Finally, the dashboard will be automatically displayed in your default browser
 
 
 ## Run the dashboard locally (using Anaconda Prompt)
 
 1. Open Anaconda Prompt
 2. Activate your environment by: `conda activate My_Environment`
-3. Open the terminal in your created environment (click on the play-icon button and choose "Open Terminal")
-4. Move to your directory using `cd your_directory` (where you cloned this repo) command, for example `cd /Users/nazgul/Desktop/Project-Dashboard-Covid`
-5. Write the following command `streamlit run plot_data.py`
-6. Finally, the dashboard will be automatically displayed in your default browser
+3. Move to your directory using `cd your_directory` (where you cloned this repo) command, for example `cd /Users/nazgul/Desktop/Project-Dashboard-Covid`
+4. Write the following command `streamlit run plot_data.py`
+5. Finally, the dashboard will be automatically displayed in your default browser
 
 
 ## Authors
