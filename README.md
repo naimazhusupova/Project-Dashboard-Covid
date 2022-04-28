@@ -101,11 +101,11 @@ In the 'requirements.txt' packages as pip and others are not included, because t
 
 ## Authors
 
-- **Eva Elbing** <eva.elbing@cri-paris.org>
+- **Eva Elbing**, <eva.elbing@cri-paris.org>
 
-- **Dennis Nunez** <dennis.nunez@cri-paris.org>
+- **Dennis Nunez**, <dennis.nunez@cri-paris.org>
 
-- **Naima Zhusupova** <naima.zhusupova@cri-paris.org>
+- **Naima Zhusupova**, <naima.zhusupova@cri-paris.org>
 
 
 ## References
