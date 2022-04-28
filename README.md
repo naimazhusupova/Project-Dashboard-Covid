@@ -1,3 +1,10 @@
+[![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.png)](https://www.python.org/)
+[![MIT Licence](https://img.shields.io/badge/License-MIT-blue.png)](https://opensource.org/licenses/mit-license.php)
+[![Ask Me Anything !](https://img.shields.io/badge/Ask%20me-anything-1abc9c.png)](https://github.com/naimazhusupova/Project-Dashboard-Covid/issues)
+[![Open Source Love](https://img.shields.io/badge/Open%20Source-%E2%9D%A4-1abc9c.png)](https://github.com/naimazhusupova/Project-Dashboard-Covid/)
+[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Download%20and%20use%20our%20Project:%20Dashboard%20Covid&url=https://github.com/naimazhusupova/Project-Dashboard-Covid&hashtags=streamlit,dashboard,covid,github)    
+
+
 # Project-Dashboard-Covid
 
 Link to Software Heritage Repository:
@@ -94,3 +101,26 @@ In the 'requirements.txt' packages as pip and others are not included, because t
 4. Move to your directory using `cd your_directory` (where you cloned this repo) command, for example `cd /Users/nazgul/Desktop/Project-Dashboard-Covid`
 5. Write the following command `streamlit run plot_data.py`
 6. Finally, the dashboard will be automatically displayed in your default browser
+
+
+## Authors
+
+- **Eva Elbing** <eva.elbing@cri-paris.org>
+
+- **Dennis Nunez** <dennis.nunez@cri-paris.org>
+
+- **Naima Zhusupova** <naima.zhusupova@cri-paris.org>
+
+
+## References
+
+- [Streamlit Website](https://streamlit.io/)
+
+- [Data on COVID-19 (coronavirus) by Our World in Data](https://github.com/owid/covid-19-data/blob/master/public/data/README.md)
+
+- [Quickly Build and Deploy a Dashboard with Streamlit](https://towardsdatascience.com/quickly-build-and-deploy-an-application-with-streamlit-988ca08c7e83)
+
+- [Build Web App instantly for Machine Learning using Streamlit](https://www.analyticsvidhya.com/blog/2021/06/build-web-app-instantly-for-machine-learning-using-streamlit/)
+
+- [Build Web App instantly for Machine Learning using Streamlit](https://www.geeksforgeeks.org/a-beginners-guide-to-streamlit/)
+
