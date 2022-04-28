@@ -4,7 +4,7 @@ Software Heritage Repository:
 
 [![SWH](https://archive.softwareheritage.org/badge/swh:1:dir:4344038aa64c26473fefb27c4dd8cca0c4748fc3/)](https://archive.softwareheritage.org/swh:1:dir:4344038aa64c26473fefb27c4dd8cca0c4748fc3;origin=https://github.com/naimazhusupova/Project-Dashboard-Covid;visit=swh:1:snp:2f48c1ea827e9550fc13ff660892cbac08d5a9a4;anchor=swh:1:rev:e9ceed24df5c4a852c30a152e7a741dbfdad9efc)
 
-This project repo contains the description, tools and instructions to replicate our dashboard with information about Covid-19. 
+This project repository contains the description, tools and instructions to replicate our dashboard with information about Covid-19. 
 
 For this dashboard we use Streamlit for the vizualization based on a dataset [COVID-19 Dataset by Our World in Data](https://github.com/owid/covid-19-data/blob/master/public/data/README.md) 
 
@@ -14,7 +14,7 @@ Our dashboard is interactive and allows the user to:
 3. Select which variable(s) to display: number / cumulated number / 7-day rolling average of confirmed cases / deaths / (recovered).
 4. Select to show the peak when cumulated number was chossen.
 
-# Installing Dependencies
+## Installing Dependencies
 
 Instead of installing every package manually we created a requirements.txt file and by running it once, all the necessary packages will be installed.
 
@@ -45,7 +45,7 @@ In the 'requirements.txt' pip, python and pandas are not included, because they 
 3. Choose in the drop-down menu 'Installed'
 4. Search for the required packages
 
-# How to run the dashboard locally?
+## How to run the dashboard locally?
 1. Open Anaconda Navigator
 2. Choose a created environment
 3. Open the terminal in your created environment (click on the play-icon button and choose "Open Terminal")
