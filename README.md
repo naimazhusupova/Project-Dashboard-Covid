@@ -36,8 +36,8 @@ Follow the next steps in order to install all required dependencies (e.g. Pandas
 3. To activate the environment: click on the created environment (click on the play-icon button and choose "Open Terminal")
 4. Choose 'Open Terminal' and continue with Part 3
 
-### Part 2: Creating virtual environment and activate it (using Anaconda Terminal)
-1. Open Anaconda Terminal
+### Part 2: Creating virtual environment and activate it (using Anaconda Prompt)
+1. Open Anaconda Prompt
 2. Create new environment writing: `conda create -n My_Environment python=3.8.12`
 3. To activate the environment: `conda activate My_Environment`
 4. Stay in the Terminal and continue with Part 3
@@ -66,9 +66,9 @@ In the 'requirements.txt' packages as pip and others are not included, because t
 6. Finally, the dashboard will be automatically displayed in your default browser
 
 
-## Run the dashboard locally (using Anaconda Terminal)
+## Run the dashboard locally (using Anaconda Prompt)
 
-1. Open Anaconda Terminal
+1. Open Anaconda Prompt
 2. Activate your environment by: `conda activate My_Environment`
 3. Open the terminal in your created environment (click on the play-icon button and choose "Open Terminal")
 4. Move to your directory using `cd your_directory` (where you cloned this repo) command, for example `cd /Users/nazgul/Desktop/Project-Dashboard-Covid`
