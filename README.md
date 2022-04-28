@@ -21,11 +21,11 @@ Instead of installing every package manually we created a requirements.txt file 
 
 Follow the next steps in order to install all required dependencies (e.g. Pandas, Matplotlib, Streamlit, ...):
 
-Part 1: Installing Anaconda
+### Part 1: Installing Anaconda
 1. If you do not have Anaconda, install it on your computer in accordance with your operating system
 2. You can find the instructions [here]( https://docs.anaconda.com/anaconda/install/) based on your operating system
 
-Part 2: Creating virtual environment and activate it (using Anaconda Navigator)
+### Part 2: Creating virtual environment and activate it (using Anaconda Navigator)
 1. Open Anaconda Navigator
 2. Create new environment based on the settings:
     - Click on Environments
@@ -36,13 +36,13 @@ Part 2: Creating virtual environment and activate it (using Anaconda Navigator)
 3. To activate the environment: click on the created environment (click on the play-icon button and choose "Open Terminal")
 4. Choose 'Open Terminal' and continue with Part 3
 
-Part 2: Creating virtual environment and activate it (using Anaconda Terminal)
+### Part 2: Creating virtual environment and activate it (using Anaconda Terminal)
 1. Open Anaconda Terminal
 2. Create new environment writing: `conda create -n My_Environment python=3.8.12`
 3. To activate the environment: `conda activate My_Environment`
 4. Stay in the Terminal and continue with Part 3
 
-Part 3: Cloning and installing dependencies
+### Part 3: Cloning and installing dependencies
 1. After Part 2, go to the opened Terminal
 2. Move to the directory where you want to clone this repo. So, write in the terminal: `cd /<any_folder>/`
 3. Clone the respository using the following command in the terminal: `git clone git@github.com:naimazhusupova/Project-Dashboard-Covid.git`
