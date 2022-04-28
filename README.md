@@ -1,5 +1,5 @@
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.png)](https://www.python.org/)
-[![MIT Licence](https://img.shields.io/badge/License-MIT-blue.png)](https://opensource.org/licenses/mit-license.php)
+[![MIT Licence](https://img.shields.io/badge/License-MIT-blue.png)](https://github.com/naimazhusupova/Project-Dashboard-Covid/blob/main/LICENSE)
 [![Ask Me Anything !](https://img.shields.io/badge/Ask%20me-anything-1abc9c.png)](https://github.com/naimazhusupova/Project-Dashboard-Covid/issues)
 [![SWH](https://archive.softwareheritage.org/badge/swh:1:dir:4344038aa64c26473fefb27c4dd8cca0c4748fc3/)](https://archive.softwareheritage.org/swh:1:dir:4344038aa64c26473fefb27c4dd8cca0c4748fc3;origin=https://github.com/naimazhusupova/Project-Dashboard-Covid;visit=swh:1:snp:2f48c1ea827e9550fc13ff660892cbac08d5a9a4;anchor=swh:1:rev:e9ceed24df5c4a852c30a152e7a741dbfdad9efc)
 
@@ -106,6 +106,11 @@ In the 'requirements.txt' packages as pip and others are not included, because t
 - **Dennis Nunez**, <dennis.nunez@cri-paris.org>
 
 - **Naima Zhusupova**, <naima.zhusupova@cri-paris.org>
+
+
+## License
+
+[MIT License](https://github.com/naimazhusupova/Project-Dashboard-Covid/blob/main/LICENSE)
 
 
 ## References
