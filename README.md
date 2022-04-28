@@ -13,7 +13,7 @@
 This project repository contains the description, tools and instructions to replicate our dashboard with information about Covid-19. You can check the deployed dashboard [here](https://share.streamlit.io/naimazhusupova/project-dashboard-covid/main/plot_data.py) (Streamlit Cloud), a screenshot of this display is shown below.
 
 <p align="center">
-<img style="border:5px outset silver;" src=".images/screenshot-dashboard.png" alt="image" width="700"/>
+<img style="border:5px outset silver;" src=".images/screenshot-dashboard.png" alt="image" width="680"/>
 </p>
 
 
@@ -118,5 +118,5 @@ In the 'requirements.txt' packages as pip and others are not included, because t
 
 - [Build Web App instantly for Machine Learning using Streamlit](https://www.analyticsvidhya.com/blog/2021/06/build-web-app-instantly-for-machine-learning-using-streamlit/)
 
-- [Build Web App instantly for Machine Learning using Streamlit](https://www.geeksforgeeks.org/a-beginners-guide-to-streamlit/)
+- [A Beginners Guide To Streamlit](https://www.geeksforgeeks.org/a-beginners-guide-to-streamlit/)
 
