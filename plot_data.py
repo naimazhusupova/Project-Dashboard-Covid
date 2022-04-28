@@ -157,4 +157,4 @@ if selected_type2 == "Cumulative Number per Million":
 sidebar.markdown(" ")
 sidebar.markdown(" ")
 sidebar.markdown(" ")
-sidebar.markdown("Find our repository [here](https://github.com/naimazhusupova/Project-Dashboard-Covid)")
+sidebar.markdown("Find our repository [here](https://github.com/naimazhusupova/Project-Dashboard-Covid) :blush:")
