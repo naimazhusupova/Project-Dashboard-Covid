@@ -14,6 +14,7 @@ Our dashboard is interactive and allows the user to:
 3. Select which variable(s) to display: number / cumulated number / 7-day rolling average of confirmed cases / deaths / (recovered).
 4. Select to show the peak when cumulated number was chossen.
 
+
 ## Installing Dependencies
 
 Instead of installing every package manually we created a requirements.txt file and by running it once, all the necessary packages will be installed.
@@ -41,16 +42,18 @@ Part 2
 9. Write in the Terminal: `pip install -r requirements.txt` (this .txt file is provided in this repo)
 
 Note:
-In the 'requirements.txt' pip, pandas among others are not included, because they are installed by default when you create a new environment using Anaconda. In any case you can check if they are installed properly:
+In the 'requirements.txt' packages as pip and others are not included, because they are installed by default when you create a new environment using Anaconda. In any case you can check if they are installed properly:
 1. Go to Anaconda Navigator
 2. Go to your environment
 3. Choose in the drop-down menu 'Installed'
 4. Search for the required packages
 
-## How to run the dashboard locally?
+
+## Run the dashboard locally
+
 1. Open Anaconda Navigator
 2. Choose a created environment
 3. Open the terminal in your created environment (click on the play-icon button and choose "Open Terminal")
 4. Move to your directory using `cd your_directory` (where you cloned this repo) command, for example `cd /Users/nazgul/Desktop/Project-Dashboard-Covid`
 5. Write the following command `streamlit run plot_data.py`
-6. Then, the dashboard will be automatically displayed in your default browser
+6. Finally, the dashboard will be automatically displayed in your default browser
