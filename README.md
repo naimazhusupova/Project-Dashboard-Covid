@@ -10,10 +10,10 @@
 
 ## Description
 
-This project repository contains the description, tools and instructions to replicate our dashboard with information about Covid-19. You can check the deployed dashboard [here](https://share.streamlit.io/naimazhusupova/project-dashboard-covid/main/plot_data.py) (Streamlit Cloud).
+This project repository contains the description, tools and instructions to replicate our dashboard with information about Covid-19. You can check the deployed dashboard [here](https://share.streamlit.io/naimazhusupova/project-dashboard-covid/main/plot_data.py) (Streamlit Cloud), a screenshot of this display is shown below.
 
 <p align="center">
-<img src=".images/screenshot-dashboard.png" alt="image" width="700"/>
+<img style="border:3px outset silver;" img src=".images/screenshot-dashboard.png" alt="image" width="700"/>
 </p>
 
 
